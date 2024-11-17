@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTool: ToolModel? = tools.first
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationSplitView {
+            List(selection: $selectedTool) {
+                ForEach(tools) { tool in
+                    Text(tool.name).tag(tool)
+                }
+            }
+            .frame(minWidth: 100)
+            .navigationTitle("left split")
+        } detail: {
+            if let tool = selectedTool {
+                tool.detailView
+            } else {
+                Text("👈Choose a tool")
+            }
         }
-        .padding()
+        .navigationTitle("")
     }
 }
 
