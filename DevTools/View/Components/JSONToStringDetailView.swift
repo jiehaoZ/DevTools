@@ -8,8 +8,14 @@
 import SwiftUI
 import SwiftyJSON
 
+enum ConvertState {
+    case jsonToString
+    case stringToJson
+}
+
 struct JSONToStringDetailView: View {
     @State private var inputText: String = ""
+    @State private var convertState: ConvertState = .jsonToString
     
     // Alert
     @State private var showAlert = false
@@ -34,11 +40,18 @@ struct JSONToStringDetailView: View {
     // 标题内容
     var headerContent: some View {
         HStack {
-            Text("JSON")
+            Text(convertState == .jsonToString ? "JSON" : "String")
                 .font(.title)
             Image(systemName: "arrow.forward.circle")
                 .font(.title2)
-            Text("String")
+                .onTapGesture {
+                    if convertState == .jsonToString {
+                        convertState = .stringToJson
+                    } else {
+                        convertState = .jsonToString
+                    }
+                }
+            Text(convertState == .jsonToString ? "String" : "JSON")
                 .font(.title)
             
             Spacer()
@@ -66,8 +79,11 @@ struct JSONToStringDetailView: View {
     
     // MARK: actions
     func onConvertClick() {
-//        self.convertJsonToString()
-        convertStringToJson()
+        if convertState == .jsonToString {
+            self.convertJsonToString()
+        } else {
+            self.convertStringToJson()
+        }
     }
     func convertJsonToString() {
         // ZJHTODO: 前置判断是否为 JSON
@@ -79,29 +95,8 @@ struct JSONToStringDetailView: View {
             self.showAlert = true
             self.alertMessage = "无效的 JSON 字符串"
         }
-        
-//        if let data = inputText.data(using: .utf8) {
-//            print(inputText)
-//            do {
-//                let json = try JSON(data: data)
-//                
-//                if let output = json.rawString(options: [.prettyPrinted, .sortedKeys]) {
-//                    inputText = output
-//                } else {
-//                    self.showAlert = true
-//                    self.alertMessage = "无法转换成字符串"
-//                }
-//            } catch {
-//                self.showAlert = true
-//                self.alertMessage = "JSON 解析错误: \(error.localizedDescription)"
-//            }
-//        } else {
-//            self.showAlert = true
-//            self.alertMessage = "无效的 JSON 字符串"
-//        }
     }
     func convertStringToJson() {
-//        let charactersToRemove = CharacterSet(charactersIn: "'\"")
         let str = removeQuotes(from: inputText)
                 
         if let data = str.data(using: .utf8) {
@@ -151,7 +146,6 @@ struct JSONToStringDetailView: View {
         alert.alertStyle = .warning
         alert.addButton(withTitle: "确定")
         alert.runModal()
-        
     }
 }
 

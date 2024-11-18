@@ -14,12 +14,10 @@
 		9CF090272C9F32AD00073DE5 /* DevToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090262C9F32AD00073DE5 /* DevToolsTests.swift */; };
 		9CF090312C9F32AD00073DE5 /* DevToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090302C9F32AD00073DE5 /* DevToolsUITests.swift */; };
 		9CF090332C9F32AD00073DE5 /* DevToolsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090322C9F32AD00073DE5 /* DevToolsUITestsLaunchTests.swift */; };
-		9CF090402C9F33A700073DE5 /* Symbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0903F2C9F33A700073DE5 /* Symbles.swift */; };
 		9CF0905D2CA0076800073DE5 /* ToolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0905C2CA0076800073DE5 /* ToolModel.swift */; };
 		9CF0905F2CA0079500073DE5 /* ToolDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0905E2CA0079500073DE5 /* ToolDataSource.swift */; };
 		9CF090622CA00B0E00073DE5 /* UnfinishedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090612CA00B0E00073DE5 /* UnfinishedDetailView.swift */; };
 		9CF090642CA00BD300073DE5 /* JSONToStringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090632CA00BD300073DE5 /* JSONToStringDetailView.swift */; };
-		9CF090672CA01C5200073DE5 /* ToolTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090662CA01C5200073DE5 /* ToolTextEditor.swift */; };
 		9CF0906A2CA028E000073DE5 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9CF090692CA028E000073DE5 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
@@ -52,12 +50,10 @@
 		9CF0902C2C9F32AD00073DE5 /* DevToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF090302C9F32AD00073DE5 /* DevToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsUITests.swift; sourceTree = "<group>"; };
 		9CF090322C9F32AD00073DE5 /* DevToolsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9CF0903F2C9F33A700073DE5 /* Symbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbles.swift; sourceTree = "<group>"; };
 		9CF0905C2CA0076800073DE5 /* ToolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolModel.swift; sourceTree = "<group>"; };
 		9CF0905E2CA0079500073DE5 /* ToolDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDataSource.swift; sourceTree = "<group>"; };
 		9CF090612CA00B0E00073DE5 /* UnfinishedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfinishedDetailView.swift; sourceTree = "<group>"; };
 		9CF090632CA00BD300073DE5 /* JSONToStringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToStringDetailView.swift; sourceTree = "<group>"; };
-		9CF090662CA01C5200073DE5 /* ToolTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +109,6 @@
 				9CF0905B2CA0070A00073DE5 /* Model */,
 				9CF090142C9F32AC00073DE5 /* DevToolsApp.swift */,
 				9CF090162C9F32AC00073DE5 /* ContentView.swift */,
-				9CF0903F2C9F33A700073DE5 /* Symbles.swift */,
 				9CF090182C9F32AD00073DE5 /* Assets.xcassets */,
 				9CF0901D2C9F32AD00073DE5 /* DevTools.entitlements */,
 				9CF0901A2C9F32AD00073DE5 /* Preview Content */,
@@ -159,8 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				9CF090652CA01C3000073DE5 /* Components */,
-				9CF090612CA00B0E00073DE5 /* UnfinishedDetailView.swift */,
-				9CF090632CA00BD300073DE5 /* JSONToStringDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,7 +161,8 @@
 		9CF090652CA01C3000073DE5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9CF090662CA01C5200073DE5 /* ToolTextEditor.swift */,
+				9CF090612CA00B0E00073DE5 /* UnfinishedDetailView.swift */,
+				9CF090632CA00BD300073DE5 /* JSONToStringDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -310,11 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF090172C9F32AC00073DE5 /* ContentView.swift in Sources */,
-				9CF090672CA01C5200073DE5 /* ToolTextEditor.swift in Sources */,
 				9CF090622CA00B0E00073DE5 /* UnfinishedDetailView.swift in Sources */,
 				9CF0905D2CA0076800073DE5 /* ToolModel.swift in Sources */,
 				9CF0905F2CA0079500073DE5 /* ToolDataSource.swift in Sources */,
-				9CF090402C9F33A700073DE5 /* Symbles.swift in Sources */,
 				9CF090152C9F32AC00073DE5 /* DevToolsApp.swift in Sources */,
 				9CF090642CA00BD300073DE5 /* JSONToStringDetailView.swift in Sources */,
 			);
