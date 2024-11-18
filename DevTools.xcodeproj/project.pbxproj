@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4754592CEBA50300B4E4AD /* URLEncodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */; };
+		9C47545D2CEBA6B300B4E4AD /* BaseConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */; };
+		9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */; };
 		9CF090152C9F32AC00073DE5 /* DevToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090142C9F32AC00073DE5 /* DevToolsApp.swift */; };
 		9CF090172C9F32AC00073DE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090162C9F32AC00073DE5 /* ContentView.swift */; };
 		9CF090192C9F32AD00073DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF090182C9F32AD00073DE5 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodeDetailView.swift; sourceTree = "<group>"; };
+		9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvertView.swift; sourceTree = "<group>"; };
+		9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseToUnicodeDetailView.swift; sourceTree = "<group>"; };
 		9CF090112C9F32AC00073DE5 /* DevTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF090142C9F32AC00073DE5 /* DevToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsApp.swift; sourceTree = "<group>"; };
 		9CF090162C9F32AC00073DE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C47545A2CEBA69B00B4E4AD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		9CF090082C9F32AC00073DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +167,7 @@
 		9CF090602CA0093600073DE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C47545A2CEBA69B00B4E4AD /* Base */,
 				9CF090652CA01C3000073DE5 /* Components */,
 			);
 			path = View;
@@ -163,6 +178,8 @@
 			children = (
 				9CF090612CA00B0E00073DE5 /* UnfinishedDetailView.swift */,
 				9CF090632CA00BD300073DE5 /* JSONToStringDetailView.swift */,
+				9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */,
+				9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,8 +324,11 @@
 				9CF090622CA00B0E00073DE5 /* UnfinishedDetailView.swift in Sources */,
 				9CF0905D2CA0076800073DE5 /* ToolModel.swift in Sources */,
 				9CF0905F2CA0079500073DE5 /* ToolDataSource.swift in Sources */,
+				9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */,
 				9CF090152C9F32AC00073DE5 /* DevToolsApp.swift in Sources */,
 				9CF090642CA00BD300073DE5 /* JSONToStringDetailView.swift in Sources */,
+				9C4754592CEBA50300B4E4AD /* URLEncodeDetailView.swift in Sources */,
+				9C47545D2CEBA6B300B4E4AD /* BaseConvertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
