@@ -25,8 +25,6 @@ struct BaseConvertView: View {
     
     @State private var convertState: ConvertState = .AToB
     
-    
-    
     init(convertA: String,
          convertB: String,
          convertAtoB: @escaping () -> Void,
@@ -53,13 +51,12 @@ struct BaseConvertView: View {
             Alert(
                 title: Text(""),
                 message: Text(alertMessage),
-                dismissButton: .default(Text("确定"))
+                dismissButton: .default(Text("OK"))
             )
         }
     }
     
     // MARK: UI
-    // 标题内容
     private var headerContent: some View {
         HStack {
             Text(convertState == .AToB ? convertA : convertB)
@@ -86,7 +83,7 @@ struct BaseConvertView: View {
         }
     }
     
-    // 输入的文本
+    // content inputed
     private var stringContent: some View {
         TextEditor(text: $inputText)
             .cornerRadius(10)
@@ -99,7 +96,7 @@ struct BaseConvertView: View {
             .autocorrectionDisabled(true)
     }
     
-    // MARK: actions
+    // MARK: Actions
     private func onConvertClick() {
         if convertState == .AToB {
             self.convertAtoB()
