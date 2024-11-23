@@ -12,6 +12,6 @@ let tools = [
     ToolModel(name: "URLEncode/Decode", detailView: AnyView(URLEncodeDetailView())),
     ToolModel(name: "Chinese↔️Unicode", detailView: AnyView(ChineseToUnicodeDetailView())),
     ToolModel(name: "Timestamp ", detailView: AnyView(TimestampDetailView())),
-    ToolModel(name: "QR Code", detailView: AnyView(UnfinishedDetailView())),
+    ToolModel(name: "QR Code", detailView: AnyView(QRCodeDetailView())),
     ToolModel(name: "Workflow", detailView: AnyView(UnfinishedDetailView())),
 ]

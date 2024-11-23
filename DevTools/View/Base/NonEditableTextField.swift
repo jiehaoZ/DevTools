@@ -10,6 +10,7 @@ import AppKit
 
 struct NonEditableSelectableTextField: NSViewRepresentable {
     @Binding var text: String
+    var placeholder: String?
     var isEditable: Bool
     
     class Coordinator: NSObject, NSTextFieldDelegate {
@@ -34,6 +35,7 @@ struct NonEditableSelectableTextField: NSViewRepresentable {
         let textField = NSTextField()
         textField.delegate = context.coordinator
         textField.stringValue = text
+        textField.placeholderString = placeholder ?? "input..."
         textField.isEditable = isEditable
         textField.isSelectable = true
         textField.backgroundColor = .clear

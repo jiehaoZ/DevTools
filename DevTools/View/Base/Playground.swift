@@ -5,50 +5,49 @@
 //  Created by Karen on 2024/11/23.
 //
 
-import SwiftUI
-
-import SwiftUI
 import AppKit
-struct CustomTextField: NSViewRepresentable {
-    @Binding var text: String
-    class Coordinator: NSObject, NSTextFieldDelegate {
-        var parent: CustomTextField
-        init(_ parent: CustomTextField) {
-            self.parent = parent
-        }
-        func controlTextDidChange(_ obj: Notification) {
-            guard let textField = obj.object as? NSTextField else {
-                return
-            }
-            DispatchQueue.main.async {
-                self.parent.text = textField.stringValue
-            }
-        }
-    }
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
-    }
-    func makeNSView(context: Context) -> NSTextField {
-        let textField = NSTextField()
-        textField.delegate = context.coordinator
-        textField.isEditable = true // Ensure the text field is editable
-        return textField
-    }
-    func updateNSView(_ nsView: NSTextField, context: Context) {
-        if nsView.stringValue != text {
-            nsView.stringValue = text
-        }
-    }
-}
+import SwiftUI
+import CoreImage.CIFilterBuiltins
+
 struct Playground: View {
-    @State private var text = "Hello, world!"
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
+    
     var body: some View {
         VStack {
-            CustomTextField(text: $text)
-                .frame(width: 200, height: 30)
-            Text("You typed: \(text)")
+            // 使用 generateQRCode() 函数生成二维码
+            if let nsImage = generateQRCode(from: "https://baidu.com") {
+                Image(nsImage: nsImage)
+                    .interpolation(.none) // 防止图像模糊
+                    .resizable()
+                    .frame(width: 300, height: 300)
+            } else {
+                Text("无法生成二维码")
+            }
         }
         .padding()
+    }
+    
+    // 将字符串转换为二维码图像
+    func generateQRCode(from string: String) -> NSImage? {
+        filter.message = Data(string.utf8)
+        
+        // 设置纠错级别
+        filter.correctionLevel = "Q"
+        
+        guard let outputImage = filter.outputImage else { return nil }
+        
+        // 调整缩放比例
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        let scaledImage = outputImage.transformed(by: transform)
+        
+        // 将 CIImage 转换为 NSImage
+        if let cgImage = context.createCGImage(scaledImage, from: scaledImage.extent) {
+            let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height))
+            return nsImage
+        }
+        
+        return nil
     }
 }
 
