@@ -1,20 +1,19 @@
 //
-//  NonEditableTextField.swift
+//  Playground.swift
 //  DevTools
 //
-//  Created by Karen on 2024/11/22.
+//  Created by Karen on 2024/11/23.
 //
 
 import SwiftUI
-import AppKit
 
-struct NonEditableSelectableTextField: NSViewRepresentable {
+import SwiftUI
+import AppKit
+struct CustomTextField: NSViewRepresentable {
     @Binding var text: String
-    var isEditable: Bool
-    
     class Coordinator: NSObject, NSTextFieldDelegate {
-        var parent: NonEditableSelectableTextField
-        init(_ parent: NonEditableSelectableTextField) {
+        var parent: CustomTextField
+        init(_ parent: CustomTextField) {
             self.parent = parent
         }
         func controlTextDidChange(_ obj: Notification) {
@@ -29,21 +28,30 @@ struct NonEditableSelectableTextField: NSViewRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
-    
     func makeNSView(context: Context) -> NSTextField {
         let textField = NSTextField()
         textField.delegate = context.coordinator
-        textField.stringValue = text
-        textField.isEditable = isEditable
-        textField.isSelectable = true
-        textField.backgroundColor = .clear
-        textField.isBordered = true
-        textField.drawsBackground = true
-        textField.font = .boldSystemFont(ofSize: 20)
+        textField.isEditable = true // Ensure the text field is editable
         return textField
     }
-    
     func updateNSView(_ nsView: NSTextField, context: Context) {
-        nsView.stringValue = text
+        if nsView.stringValue != text {
+            nsView.stringValue = text
+        }
     }
+}
+struct Playground: View {
+    @State private var text = "Hello, world!"
+    var body: some View {
+        VStack {
+            CustomTextField(text: $text)
+                .frame(width: 200, height: 30)
+            Text("You typed: \(text)")
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    Playground()
 }

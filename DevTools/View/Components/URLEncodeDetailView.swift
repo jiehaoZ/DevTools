@@ -22,7 +22,6 @@ struct URLEncodeDetailView: View {
                 showAlert = true
             }
         }, convertBtoA: {
-            print("URLDecode")
             if let res = inputText.removingPercentEncoding {
                 inputText = res
             } else {
