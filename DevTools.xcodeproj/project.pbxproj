@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C34E4342CF1C68F00802992 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4332CF1C68F00802992 /* Playground.swift */; };
 		9C34E4362CF1CD2F00802992 /* QRCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */; };
+		9C34E4382CF35A9600802992 /* StringEscapeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */; };
 		9C4754592CEBA50300B4E4AD /* URLEncodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */; };
 		9C47545D2CEBA6B300B4E4AD /* BaseConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */; };
 		9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		9C34E4332CF1C68F00802992 /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeDetailView.swift; sourceTree = "<group>"; };
+		9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEscapeDetailView.swift; sourceTree = "<group>"; };
 		9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodeDetailView.swift; sourceTree = "<group>"; };
 		9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvertView.swift; sourceTree = "<group>"; };
 		9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseToUnicodeDetailView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */,
 				9C4754602CEF980400B4E4AD /* TimestampDetailView.swift */,
 				9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */,
+				9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				9CF0905D2CA0076800073DE5 /* ToolModel.swift in Sources */,
 				9C34E4362CF1CD2F00802992 /* QRCodeDetailView.swift in Sources */,
 				9CF0905F2CA0079500073DE5 /* ToolDataSource.swift in Sources */,
+				9C34E4382CF35A9600802992 /* StringEscapeDetailView.swift in Sources */,
 				9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */,
 				9CF090152C9F32AC00073DE5 /* DevToolsApp.swift in Sources */,
 				9C34E4342CF1C68F00802992 /* Playground.swift in Sources */,
@@ -435,7 +439,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -493,7 +497,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -521,6 +525,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fafa.DevTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,6 +554,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fafa.DevTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
