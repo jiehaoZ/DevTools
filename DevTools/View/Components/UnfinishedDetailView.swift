@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UnfinishedDetailView: View {
     var body: some View {
-        Text("Still Coding")
+        Text("To Be Continued...")
             .font(.largeTitle)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

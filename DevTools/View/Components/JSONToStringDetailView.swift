@@ -30,7 +30,7 @@ struct JSONToStringDetailView: View {
             inputText = "\'\(res)\'"
         } else {
             self.showAlert = true
-            self.alertMessage = "无效的 JSON 字符串"
+            self.alertMessage = "invalid JSON"
         }
     }
     func convertStringToJson() {
@@ -46,16 +46,15 @@ struct JSONToStringDetailView: View {
                     inputText = prettyPrintedString
                 } else {
                     self.showAlert = true
-                    self.alertMessage = "无法转换成字符串"
-
+                    self.alertMessage = "invalid JSON string"
                 }
             } catch {
                 self.showAlert = true
-                self.alertMessage = "String 解析错误: \(error.localizedDescription)"
+                self.alertMessage = "ERROR: \(error.localizedDescription)"
             }
         } else {
             self.showAlert = true
-            self.alertMessage = "无效的字符串"
+            self.alertMessage = "invalid JSON string"
         }
     }
     

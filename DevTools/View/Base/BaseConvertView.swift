@@ -63,6 +63,8 @@ struct BaseConvertView: View {
                 .font(.title)
             Image(systemName: "arrow.forward.circle")
                 .font(.title2)
+                .foregroundColor(Color.blue)
+                .shadow(radius: 5)
                 .onTapGesture {
                     if convertState == .AToB {
                         convertState = .BToA
