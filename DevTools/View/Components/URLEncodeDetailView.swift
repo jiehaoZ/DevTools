@@ -15,19 +15,15 @@ struct URLEncodeDetailView: View {
     
     var body: some View {
         BaseConvertView(convertA: "URL", convertB: "EncodedURL", convertAtoB: {
-            if let res = inputText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-                inputText = res
-            } else {
-                alertMessage = "URL encode failed, error url"
-                showAlert = true
-            }
+            inputText = inputText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? {
+                (alertMessage, showAlert) = ("URL encode failed, error url", true)
+                return inputText
+            }()
         }, convertBtoA: {
-            if let res = inputText.removingPercentEncoding {
-                inputText = res
-            } else {
-                alertMessage = "URL decode failed, error url"
-                showAlert = true
-            }
+            inputText = inputText.removingPercentEncoding ?? {
+                (alertMessage, showAlert) = ("URL decode failed, error url", true)
+                return inputText
+            }()
         }, inputText: $inputText, showAlert: $showAlert, alertMessage: $alertMessage)
     }
 }

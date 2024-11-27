@@ -34,7 +34,7 @@ struct JSONToStringDetailView: View {
         }
     }
     func convertStringToJson() {
-        let str = removeQuotes(from: inputText)
+        let str = inputText.removeQuotes().deEscaped()
                 
         if let data = str.data(using: .utf8) {
             do {
@@ -56,24 +56,6 @@ struct JSONToStringDetailView: View {
             self.showAlert = true
             self.alertMessage = "invalid JSON string"
         }
-    }
-    
-    func removeQuotes(from input: String) -> String {
-        var result = input
-        
-        // 检查是否以双引号开头
-        if result.hasPrefix("\"") || result.hasPrefix("\'") {
-            // 移除开头的双引号
-            result.removeFirst()
-        }
-        
-        // 检查是否以双引号结尾
-        if result.hasSuffix("\"") || result.hasSuffix("\'") {
-            // 移除结尾的双引号
-            result.removeLast()
-        }
-        
-        return result
     }
 }
 

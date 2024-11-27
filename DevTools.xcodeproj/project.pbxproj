@@ -10,6 +10,7 @@
 		9C34E4342CF1C68F00802992 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4332CF1C68F00802992 /* Playground.swift */; };
 		9C34E4362CF1CD2F00802992 /* QRCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */; };
 		9C34E4382CF35A9600802992 /* StringEscapeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */; };
+		9C34E43C2CF7633000802992 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E43B2CF7633000802992 /* String+Convert.swift */; };
 		9C4754592CEBA50300B4E4AD /* URLEncodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */; };
 		9C47545D2CEBA6B300B4E4AD /* BaseConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */; };
 		9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */; };
@@ -50,6 +51,7 @@
 		9C34E4332CF1C68F00802992 /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeDetailView.swift; sourceTree = "<group>"; };
 		9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEscapeDetailView.swift; sourceTree = "<group>"; };
+		9C34E43B2CF7633000802992 /* String+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convert.swift"; sourceTree = "<group>"; };
 		9C4754582CEBA50300B4E4AD /* URLEncodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodeDetailView.swift; sourceTree = "<group>"; };
 		9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvertView.swift; sourceTree = "<group>"; };
 		9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseToUnicodeDetailView.swift; sourceTree = "<group>"; };
@@ -98,11 +100,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C47545A2CEBA69B00B4E4AD /* Base */ = {
+		9C34E4392CF762DE00802992 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */,
 				9C4754622CEF9E3A00B4E4AD /* NonEditableTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C34E43A2CF762EE00802992 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C34E43B2CF7633000802992 /* String+Convert.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9C47545A2CEBA69B00B4E4AD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9C34E43A2CF762EE00802992 /* Extension */,
+				9C34E4392CF762DE00802992 /* View */,
 				9C34E4332CF1C68F00802992 /* Playground.swift */,
 			);
 			path = Base;
@@ -348,6 +367,7 @@
 				9C34E4342CF1C68F00802992 /* Playground.swift in Sources */,
 				9CF090642CA00BD300073DE5 /* JSONToStringDetailView.swift in Sources */,
 				9C4754592CEBA50300B4E4AD /* URLEncodeDetailView.swift in Sources */,
+				9C34E43C2CF7633000802992 /* String+Convert.swift in Sources */,
 				9C47545D2CEBA6B300B4E4AD /* BaseConvertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
