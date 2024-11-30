@@ -4,6 +4,10 @@
 
 ![image-20241130171211615](images/image-20241130171211615.png)
 
+## Requirements
+
+* macOS 14.0+
+
 ## License and Information
 
 DevTools is under the MIT license. 
