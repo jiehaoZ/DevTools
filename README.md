@@ -1,7 +1,5 @@
 # DevTools
 
----
-
 ![image-20241130171211615](images/image-20241130171211615.png)
 
 ## Requirements
