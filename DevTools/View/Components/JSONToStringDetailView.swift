@@ -15,10 +15,10 @@ struct JSONToStringDetailView: View {
     @State var alertMessage = ""
     
     var body: some View {
-        BaseConvertView(convertA: "JSON", convertB: "String", convertAtoB: {
-            convertJsonToString()
-        }, convertBtoA: {
+        BaseConvertView(convertA: "String", convertB: "JSON", convertAtoB: {
             convertStringToJson()
+        }, convertBtoA: {
+            convertJsonToString()
         }, inputText: $inputText, showAlert: $showAlert, alertMessage: $alertMessage)
     }
     
@@ -27,14 +27,14 @@ struct JSONToStringDetailView: View {
         if inputText.data(using: .utf8) != nil {
             let charactersToRemove = CharacterSet.whitespacesAndNewlines
             let res = inputText.components(separatedBy: charactersToRemove).joined()
-            inputText = "\'\(res)\'"
+            inputText = "\'\(res)\'".chinese() ?? "\'\(res)\'"
         } else {
             self.showAlert = true
             self.alertMessage = "invalid JSON"
         }
     }
     func convertStringToJson() {
-        let str = inputText.removeQuotes().deEscaped()
+        let str = inputText.removeWhitespaceCharacters().removeQuotes().deEscaped().unicode()
                 
         if let data = str.data(using: .utf8) {
             do {
@@ -43,7 +43,7 @@ struct JSONToStringDetailView: View {
                 // 转换为格式化字符串
                 let prettyJsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
                 if let prettyPrintedString = String(data: prettyJsonData, encoding: .utf8) {
-                    inputText = prettyPrintedString
+                    inputText = prettyPrintedString.chinese() ?? prettyPrintedString
                 } else {
                     self.showAlert = true
                     self.alertMessage = "invalid JSON string"

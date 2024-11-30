@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    // MARK: clean string
     func removeQuotes() -> Self {
         var result = self
         // check prefix " and '
@@ -22,8 +23,22 @@ extension String {
         
         return result
     }
+    func removeWhitespaceCharacters() -> String {
+        // 定义正则表达式模式，匹配换行符（\n）、制表符（\t）、回车符（\r）和空格
+        let pattern = "[\\n\\t\\r ]"
+        
+        // 创建正则表达式对象
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return self
+        }
+        
+        // 使用正则表达式替换匹配的字符，替换为空字符串
+        let cleanedString = regex.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count), withTemplate: "")
+        
+        return cleanedString
+    }
     
-    // escape
+    // MARK: escape
     func escaped() -> Self {
         var escapedString =
         #"""
@@ -65,7 +80,7 @@ extension String {
         return descapeString
     }
     
-    // unicode
+    // MARK: unicode
     func unicode() -> String {
         var result = ""
         for scalar in self.unicodeScalars {

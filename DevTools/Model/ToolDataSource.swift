@@ -8,7 +8,7 @@
 import SwiftUI
 
 let tools = [
-    ToolModel(name: "JSON↔️String", detailView: AnyView(JSONToStringDetailView())),
+    ToolModel(name: "String↔️JSON", detailView: AnyView(JSONToStringDetailView())),
     ToolModel(name: "URL↔️EncodedURL", detailView: AnyView(URLEncodeDetailView())),
     ToolModel(name: "String↔️EscapedString", detailView: AnyView(StringEscapeDetailView())),
     ToolModel(name: "Chinese↔️Unicode", detailView: AnyView(ChineseToUnicodeDetailView())),
