@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-private enum ConvertState {
-    case AToB
-    case BToA
+private enum ConvertState: Int, CaseIterable {
+    case AToB = 1
+    case BToA  = 2
 }
 
 struct BaseConvertView: View {
@@ -59,22 +59,18 @@ struct BaseConvertView: View {
     // MARK: UI
     private var headerContent: some View {
         HStack {
-            Text(convertState == .AToB ? convertA : convertB)
-                .font(.title)
-            Image(systemName: "arrow.forward.circle")
-                .font(.title2)
-                .foregroundStyle(.tint)
-                .symbolEffect(.pulse)
-                .shadow(radius: 5)
-                .onTapGesture {
-                    if convertState == .AToB {
-                        convertState = .BToA
+            Picker("", selection: $convertState) {
+                ForEach(ConvertState.allCases, id: \.self) { state in
+                    if state == .AToB {
+                        Text("\(convertA)➡️\(convertB)")
                     } else {
-                        convertState = .AToB
+                        Text("\(convertB)➡️\(convertA)")
                     }
+                    
                 }
-            Text(convertState == .BToA ? convertA : convertB)
-                .font(.title)
+            }
+            .pickerStyle(MenuPickerStyle())
+            .fixedSize()
             
             Spacer()
             

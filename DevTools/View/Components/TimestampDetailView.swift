@@ -132,7 +132,7 @@ struct TimestampDetailView: View {
             }
         }
         .pickerStyle(MenuPickerStyle())
-        .frame(width: 120)
+        .fixedSize()
     }
     
     // MARK: Actions
