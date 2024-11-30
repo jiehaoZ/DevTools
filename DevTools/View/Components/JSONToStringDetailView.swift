@@ -23,11 +23,15 @@ struct JSONToStringDetailView: View {
     }
     
     func convertJsonToString() {
-        // ZJHTODO: 前置判断是否为 JSON
+        guard inputText.isValidJSON() else {
+            self.showAlert = true
+            self.alertMessage = "invalid JSON 123"
+            return
+        }
         if inputText.data(using: .utf8) != nil {
             let charactersToRemove = CharacterSet.whitespacesAndNewlines
-            let res = inputText.components(separatedBy: charactersToRemove).joined()
-            inputText = "\'\(res)\'".chinese() ?? "\'\(res)\'"
+            let res = "\"\(inputText.components(separatedBy: charactersToRemove).joined())\""
+            inputText = res.chinese() ?? res
         } else {
             self.showAlert = true
             self.alertMessage = "invalid JSON"

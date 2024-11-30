@@ -38,6 +38,19 @@ extension String {
         return cleanedString
     }
     
+    // MARK: JSONString
+    func isValidJSON() -> Bool {
+        guard let data = self.data(using: .utf8) else {
+            return false
+        }
+        do {
+            _ = try JSONSerialization.jsonObject(with: data, options: [])
+            return true
+        } catch {
+            return false
+        }
+    }
+    
     // MARK: escape
     func escaped() -> Self {
         var escapedString =
