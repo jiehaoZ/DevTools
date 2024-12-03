@@ -15,4 +15,5 @@ let tools = [
     ToolModel(name: "Timestamp ", detailView: AnyView(TimestampDetailView())),
     ToolModel(name: "QR Code", detailView: AnyView(QRCodeDetailView())),
     ToolModel(name: "Workflow", detailView: AnyView(UnfinishedDetailView())),
+//    ToolModel(name: "Workflow", detailView: AnyView(Playground())),
 ]

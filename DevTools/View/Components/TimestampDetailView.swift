@@ -145,8 +145,6 @@ struct TimestampDetailView: View {
     }
     /// convert timestamp to string
     private func formattedDate(from timestampString: String, timeUnit: TimeUnit) -> String? {
-        print("formattedDate \(timestampString)")
-        
         guard let timestamp = Double(timestampString) else {
             return nil
         }

@@ -84,15 +84,14 @@ struct BaseConvertView: View {
     
     // content inputed
     private var stringContent: some View {
-        TextEditor(text: $inputText)
+//        TextEditor(text: $inputText)
+        PureTextView(text: $inputText, font: .systemFont(ofSize: 16))
             .cornerRadius(10)
-            .font(.title3)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.gray, lineWidth: 1)
                 .opacity(0.4)
             )
-            .autocorrectionDisabled(true)
     }
     
     // MARK: Actions
