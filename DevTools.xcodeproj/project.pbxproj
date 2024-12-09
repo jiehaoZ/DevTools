@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C16B4FD2D075FB30082D825 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 9C16B4FC2D075FB30082D825 /* CodeEditor */; };
 		9C34E4342CF1C68F00802992 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4332CF1C68F00802992 /* Playground.swift */; };
 		9C34E4362CF1CD2F00802992 /* QRCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4352CF1CD2F00802992 /* QRCodeDetailView.swift */; };
 		9C34E4382CF35A9600802992 /* StringEscapeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C34E4372CF35A9600802992 /* StringEscapeDetailView.swift */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C16B4FD2D075FB30082D825 /* CodeEditor in Frameworks */,
 				9CF0906A2CA028E000073DE5 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +238,7 @@
 			name = DevTools;
 			packageProductDependencies = (
 				9CF090692CA028E000073DE5 /* SwiftyJSON */,
+				9C16B4FC2D075FB30082D825 /* CodeEditor */,
 			);
 			productName = DevTools;
 			productReference = 9CF090112C9F32AC00073DE5 /* DevTools.app */;
@@ -311,6 +314,7 @@
 			mainGroup = 9CF090082C9F32AC00073DE5;
 			packageReferences = (
 				9CF090682CA028E000073DE5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				9C16B4FB2D075FB30082D825 /* XCRemoteSwiftPackageReference "CodeEditor" */,
 			);
 			productRefGroup = 9CF090122C9F32AC00073DE5 /* Products */;
 			projectDirPath = "";
@@ -697,6 +701,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9C16B4FB2D075FB30082D825 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.6;
+			};
+		};
 		9CF090682CA028E000073DE5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -708,6 +720,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9C16B4FC2D075FB30082D825 /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C16B4FB2D075FB30082D825 /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
+		};
 		9CF090692CA028E000073DE5 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9CF090682CA028E000073DE5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

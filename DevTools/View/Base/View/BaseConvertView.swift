@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CodeEditor
 
 private enum ConvertState: Int, CaseIterable {
     case AToB = 1
@@ -84,14 +85,8 @@ struct BaseConvertView: View {
     
     // content inputed
     private var stringContent: some View {
-//        TextEditor(text: $inputText)
-        PureTextView(text: $inputText, font: .systemFont(ofSize: 16))
-            .cornerRadius(10)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.gray, lineWidth: 1)
-                .opacity(0.4)
-            )
+        CodeEditor(source: $inputText, language: .json, theme: .atelierSavannaDark, fontSize: Binding.constant(16))
+            .cornerRadius(5)
     }
     
     // MARK: Actions

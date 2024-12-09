@@ -1,6 +1,24 @@
 {
-  "originHash" : "9be1ce9cd5ec6eb8156aebee775862685f309175ca1b1bc32f22cff5e06214b2",
+  "originHash" : "00063846175fc89e1849a8f99ee08e3298ee0b64144e82869af372c02e43e5ff",
   "pins" : [
+    {
+      "identity" : "codeeditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZeeZide/CodeEditor.git",
+      "state" : {
+        "revision" : "f5c076b94f4ceb05abff88ba91d75a8d57143f0c",
+        "version" : "1.2.6"
+      }
+    },
+    {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/helje5/Highlightr",
+      "state" : {
+        "revision" : "bd0358056ff1f12ea83833a9fc1b3b5a396a9da0",
+        "version" : "3.0.2"
+      }
+    },
     {
       "identity" : "swiftyjson",
       "kind" : "remoteSourceControl",
