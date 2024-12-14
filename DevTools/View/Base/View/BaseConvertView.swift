@@ -42,6 +42,7 @@ struct BaseConvertView: View {
                                   convertState: Binding.constant(.AToB)) { state in
                 onConvertClick(state: state)
             }
+            Spacer().frame(height: 15)
             contentEditor
         }
         .padding()

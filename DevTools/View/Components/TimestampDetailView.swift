@@ -69,7 +69,7 @@ struct TimestampDetailView: View {
                         pauseTimer()
                     }
                 }
-            Text(timerRunning ? "Start" : "Pause")
+            Text(timerRunning ? "Running" : "Pause")
         }
     }
     private var convertTimestampView: some View {
@@ -120,7 +120,7 @@ struct TimestampDetailView: View {
             HStack {
                 Text("Result:")
                     .font(.title)
-                NonEditableTextField(text: $timeStringConvertResult, isEditable: true)
+                NonEditableTextField(text: $timeStringConvertResult, isEditable: false)
                     .frame(width: 220)
             }
         }

@@ -14,13 +14,13 @@ struct ChineseToUnicodeDetailView: View {
     @State var alertMessage = ""
     
     var body: some View {
-        BaseConvertView(convertA: "Chinese", convertB: "Unicode", convertAtoB: {
-            inputText = inputText.unicode()
-        }, convertBtoA: {
+        BaseConvertView(convertA: "Unicode", convertB: "Chinese", convertAtoB: {
             inputText = inputText.chinese() ?? {
                 (alertMessage, showAlert) = ("convert failed, error unicode", true)
                 return inputText
             }()
+        }, convertBtoA: {
+            inputText = inputText.unicode()
         }, inputText: $inputText, showAlert: $showAlert, alertMessage: $alertMessage)
     }
 }

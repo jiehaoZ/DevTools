@@ -8,21 +8,19 @@
 import SwiftUI
 
 public enum ConvertState: Int, CaseIterable {
-    case AToB = 1
-    case BToA = 2
+    case AToB, BToA
 }
 
 struct BaseConvertHeaderView: View {
     private var convertA = ""
     private var convertB = ""
     @Binding private var convertState: ConvertState
-    private let onConvertClick: (_ state: ConvertState) -> Void
-    
+    private let onConvertClick: ((_ state: ConvertState) -> Void)?
     
     init(convertA: String = "",
          convertB: String = "",
          convertState: Binding<ConvertState>,
-         onConvertClick: @escaping (_ state: ConvertState) -> Void) {
+         onConvertClick: ((_ state: ConvertState) -> Void)? = nil) {
         self.convertA = convertA
         self.convertB = convertB
         _convertState = convertState
@@ -45,12 +43,14 @@ struct BaseConvertHeaderView: View {
             .fixedSize()
             
             Spacer()
-            
-            Button(action: {
-                onConvertClick(self.convertState)
-            }, label: {
-                Text("convert")
-            })
+            if let onConvertClick {
+                Button(action: {
+                    onConvertClick(self.convertState)
+                }, label: {
+                    Text("convert")
+                        .font(.system(size: 14))
+                })
+            }
         }
     }
 }

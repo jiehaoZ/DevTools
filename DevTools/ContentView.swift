@@ -14,7 +14,9 @@ struct ContentView: View {
         NavigationSplitView {
             List(selection: $selectedTool) {
                 ForEach(tools) { tool in
-                    Text(tool.name).tag(tool)
+                    Text(tool.name)
+                        .tag(tool)
+                        .font(.system(size: 14))
                 }
             }
             .frame(minWidth: 100)
