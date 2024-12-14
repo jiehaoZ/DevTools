@@ -10,6 +10,7 @@ import CodeEditor
 
 struct BaseConvertView: View {
     @Binding private var inputText: String
+    @State private var convertState: ConvertState = .AToB
     // Alert
     @Binding private var showAlert: Bool
     @Binding private var alertMessage: String
@@ -39,7 +40,7 @@ struct BaseConvertView: View {
         VStack(alignment: .leading) {
             BaseConvertHeaderView(convertA: convertA,
                                   convertB: convertB,
-                                  convertState: Binding.constant(.AToB)) { state in
+                                  convertState: $convertState) { state in
                 onConvertClick(state: state)
             }
             Spacer().frame(height: 15)
