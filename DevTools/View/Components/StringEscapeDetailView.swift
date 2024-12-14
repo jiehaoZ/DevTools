@@ -14,10 +14,10 @@ struct StringEscapeDetailView: View {
     @State var alertMessage = ""
     
     var body: some View {
-        BaseConvertView(convertA: "String", convertB: "EscapedString", convertAtoB: {
-            inputText = inputText.escaped()
-        }, convertBtoA: {
+        BaseConvertView(convertA: "EscapedString", convertB: "String", convertAtoB: {
             inputText = inputText.deEscaped()
+        }, convertBtoA: {
+            inputText = inputText.escaped()
         }, inputText: $inputText, showAlert: $showAlert, alertMessage: $alertMessage)
     }
 }

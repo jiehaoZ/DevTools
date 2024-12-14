@@ -8,11 +8,6 @@
 import SwiftUI
 import CodeEditor
 
-private enum ConvertState: Int, CaseIterable {
-    case AToB = 1
-    case BToA  = 2
-}
-
 struct BaseConvertView: View {
     @Binding var inputText: String
     // Alert
@@ -23,8 +18,6 @@ struct BaseConvertView: View {
     private var convertB = ""
     private let convertAtoB: () -> Void
     private let convertBtoA: () -> Void
-    
-    @State private var convertState: ConvertState = .AToB
     
     init(convertA: String,
          convertB: String,
@@ -44,7 +37,9 @@ struct BaseConvertView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            headerContent
+            BaseConvertHeaderView(convertA: convertA, convertB: convertB) { state in
+                onConvertClick(state: state)
+            }
             stringContent
         }
         .padding()
@@ -57,32 +52,6 @@ struct BaseConvertView: View {
         }
     }
     
-    // MARK: UI
-    private var headerContent: some View {
-        HStack {
-            Picker("", selection: $convertState) {
-                ForEach(ConvertState.allCases, id: \.self) { state in
-                    if state == .AToB {
-                        Text("\(convertA)➡️\(convertB)")
-                    } else {
-                        Text("\(convertB)➡️\(convertA)")
-                    }
-                    
-                }
-            }
-            .pickerStyle(MenuPickerStyle())
-            .fixedSize()
-            
-            Spacer()
-            
-            Button(action: {
-                onConvertClick()
-            }, label: {
-                Text("convert")
-            })
-        }
-    }
-    
     // content inputed
     private var stringContent: some View {
         CodeEditor(source: $inputText, language: .json, theme: .atelierSavannaDark, fontSize: Binding.constant(16))
@@ -90,8 +59,8 @@ struct BaseConvertView: View {
     }
     
     // MARK: Actions
-    private func onConvertClick() {
-        if convertState == .AToB {
+    private func onConvertClick(state: ConvertState) {
+        if state == .AToB {
             self.convertAtoB()
         } else {
             self.convertBtoA()

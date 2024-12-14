@@ -9,11 +9,11 @@ import SwiftUI
 
 let tools = [
     ToolModel(name: "String↔️JSON", detailView: AnyView(JSONToStringDetailView())),
-    ToolModel(name: "URL↔️EncodedURL", detailView: AnyView(URLEncodeDetailView())),
-    ToolModel(name: "String↔️EscapedString", detailView: AnyView(StringEscapeDetailView())),
+    ToolModel(name: "EncodedURL↔️URL", detailView: AnyView(URLEncodeDetailView())),
+    ToolModel(name: "EscapedString↔️String", detailView: AnyView(StringEscapeDetailView())),
     ToolModel(name: "Chinese↔️Unicode", detailView: AnyView(ChineseToUnicodeDetailView())),
+    ToolModel(name: "RGB↔️Hex", detailView: AnyView(ChineseToUnicodeDetailView())),
     ToolModel(name: "Timestamp ", detailView: AnyView(TimestampDetailView())),
     ToolModel(name: "QR Code", detailView: AnyView(QRCodeDetailView())),
     ToolModel(name: "Workflow", detailView: AnyView(UnfinishedDetailView())),
-//    ToolModel(name: "Workflow", detailView: AnyView(Playground())),
 ]

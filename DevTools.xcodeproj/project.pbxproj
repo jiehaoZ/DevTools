@@ -17,6 +17,7 @@
 		9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */; };
 		9C4754612CEF980400B4E4AD /* TimestampDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754602CEF980400B4E4AD /* TimestampDetailView.swift */; };
 		9C4754632CEF9E3A00B4E4AD /* NonEditableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754622CEF9E3A00B4E4AD /* NonEditableTextField.swift */; };
+		9C9523262D0D645A00B2FE76 /* BaseConvertHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9523252D0D645A00B2FE76 /* BaseConvertHeaderView.swift */; };
 		9CF090152C9F32AC00073DE5 /* DevToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090142C9F32AC00073DE5 /* DevToolsApp.swift */; };
 		9CF090172C9F32AC00073DE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF090162C9F32AC00073DE5 /* ContentView.swift */; };
 		9CF090192C9F32AD00073DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF090182C9F32AD00073DE5 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		9C47545E2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseToUnicodeDetailView.swift; sourceTree = "<group>"; };
 		9C4754602CEF980400B4E4AD /* TimestampDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampDetailView.swift; sourceTree = "<group>"; };
 		9C4754622CEF9E3A00B4E4AD /* NonEditableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEditableTextField.swift; sourceTree = "<group>"; };
+		9C9523252D0D645A00B2FE76 /* BaseConvertHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvertHeaderView.swift; sourceTree = "<group>"; };
 		9CF090112C9F32AC00073DE5 /* DevTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF090142C9F32AC00073DE5 /* DevToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsApp.swift; sourceTree = "<group>"; };
 		9CF090162C9F32AC00073DE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				9C47545C2CEBA6B300B4E4AD /* BaseConvertView.swift */,
 				9C4754622CEF9E3A00B4E4AD /* NonEditableTextField.swift */,
+				9C9523252D0D645A00B2FE76 /* BaseConvertHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				9CF090622CA00B0E00073DE5 /* UnfinishedDetailView.swift in Sources */,
 				9CF0905D2CA0076800073DE5 /* ToolModel.swift in Sources */,
 				9C34E4362CF1CD2F00802992 /* QRCodeDetailView.swift in Sources */,
+				9C9523262D0D645A00B2FE76 /* BaseConvertHeaderView.swift in Sources */,
 				9CF0905F2CA0079500073DE5 /* ToolDataSource.swift in Sources */,
 				9C34E4382CF35A9600802992 /* StringEscapeDetailView.swift in Sources */,
 				9C47545F2CEBAF6700B4E4AD /* ChineseToUnicodeDetailView.swift in Sources */,
