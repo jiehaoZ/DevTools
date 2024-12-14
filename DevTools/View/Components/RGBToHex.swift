@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct RGBToHex: View {
+    @State var convertState: ConvertState = .AToB
     // Alert
-    @State var showAlert = false
-    @State var alertMessage = ""
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         VStack(alignment: .leading) {
-            BaseConvertHeaderView(convertA: "RGB", convertB: "Hex") { state in
+            BaseConvertHeaderView(convertA: "RGB",
+                                  convertB: "Hex",
+                                  convertState: $convertState) { state in
                 onConvertClick(state: state)
             }
+            convertPannel
         }
         .padding()
         .alert(isPresented: $showAlert) {
@@ -27,6 +31,24 @@ struct RGBToHex: View {
         }
     }
     
+    // MARK: UI
+    private var convertPannel: some View {
+        if convertState == .AToB {
+            Text("RGBToHex")
+        } else {
+            Text("HexToRGB")
+        }
+    }
+    
+    private var rgbToHexConvertPannel: some View {
+        Text("rgbToHexConvertPannel")
+    }
+    
+    private var hexToRGBConvertPannel: some View {
+        Text("hexToRGBConvertPannel")
+    }
+    
+    // MARK: Actions
     private func convertRGBToHex() {
         print("convertRGBToHex")
     }

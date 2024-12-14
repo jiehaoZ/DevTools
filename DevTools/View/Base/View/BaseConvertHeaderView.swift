@@ -15,15 +15,17 @@ public enum ConvertState: Int, CaseIterable {
 struct BaseConvertHeaderView: View {
     private var convertA = ""
     private var convertB = ""
+    @Binding private var convertState: ConvertState
     private let onConvertClick: (_ state: ConvertState) -> Void
     
-    @State private var convertState: ConvertState = .AToB
     
     init(convertA: String = "",
          convertB: String = "",
+         convertState: Binding<ConvertState>,
          onConvertClick: @escaping (_ state: ConvertState) -> Void) {
         self.convertA = convertA
         self.convertB = convertB
+        _convertState = convertState
         self.onConvertClick = onConvertClick
     }
     
@@ -54,7 +56,7 @@ struct BaseConvertHeaderView: View {
 }
 
 #Preview {
-    BaseConvertHeaderView(convertA: "A", convertB: "B") {state in
+    BaseConvertHeaderView(convertA: "A", convertB: "B", convertState: Binding.constant(.AToB)) {state in
         if state == .AToB {
             print("AToB")
         } else {

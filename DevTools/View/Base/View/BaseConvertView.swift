@@ -9,10 +9,10 @@ import SwiftUI
 import CodeEditor
 
 struct BaseConvertView: View {
-    @Binding var inputText: String
+    @Binding private var inputText: String
     // Alert
-    @Binding var showAlert: Bool
-    @Binding var alertMessage: String
+    @Binding private var showAlert: Bool
+    @Binding private var alertMessage: String
     
     private var convertA = ""
     private var convertB = ""
@@ -37,7 +37,9 @@ struct BaseConvertView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            BaseConvertHeaderView(convertA: convertA, convertB: convertB) { state in
+            BaseConvertHeaderView(convertA: convertA,
+                                  convertB: convertB,
+                                  convertState: Binding.constant(.AToB)) { state in
                 onConvertClick(state: state)
             }
             contentEditor
