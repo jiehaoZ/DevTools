@@ -1,6 +1,6 @@
 # DevTools
 
-![image-20241130171211615](images/image-20241130171211615.png)
+![image-20241214215953216](images/image-20241214215953216.png)
 
 ## Requirements
 
