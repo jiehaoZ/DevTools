@@ -58,7 +58,7 @@ struct TimestampDetailView: View {
             Text("Current Timestamp:")
                 .font(.title)
             Spacer()
-            NonEditableSelectableTextField(text: $currentTimestamp, isEditable: false)
+            NonEditableTextField(text: $currentTimestamp, isEditable: false)
             Spacer()
             Toggle("", isOn: $timerRunning)
                 .toggleStyle(SwitchToggleStyle())
@@ -77,7 +77,7 @@ struct TimestampDetailView: View {
             HStack {
                 Text("Unix Timestamp:")
                     .font(.title)
-                NonEditableSelectableTextField(text: $timestampToBeConverted, isEditable: true)
+                NonEditableTextField(text: $timestampToBeConverted, isEditable: true)
                     .frame(width: 220)
                 timeUnitPickerView
                 
@@ -93,7 +93,7 @@ struct TimestampDetailView: View {
             HStack {
                 Text("Result:")
                     .font(.title)
-                NonEditableSelectableTextField(text: $timestampConvertResult, isEditable: false)
+                NonEditableTextField(text: $timestampConvertResult, isEditable: false)
                     .frame(width: 220)
             }
         }
@@ -104,7 +104,7 @@ struct TimestampDetailView: View {
             HStack {
                 Text("Time:")
                     .font(.title)
-                NonEditableSelectableTextField(text: $timeStringToBeConverted, isEditable: true)
+                NonEditableTextField(text: $timeStringToBeConverted, isEditable: true)
                     .frame(width: 220)
                 timeUnitPickerView
                 
@@ -120,7 +120,7 @@ struct TimestampDetailView: View {
             HStack {
                 Text("Result:")
                     .font(.title)
-                NonEditableSelectableTextField(text: $timeStringConvertResult, isEditable: true)
+                NonEditableTextField(text: $timeStringConvertResult, isEditable: true)
                     .frame(width: 220)
             }
         }

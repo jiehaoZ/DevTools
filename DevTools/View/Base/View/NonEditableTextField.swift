@@ -8,14 +8,14 @@
 import SwiftUI
 import AppKit
 
-struct NonEditableSelectableTextField: NSViewRepresentable {
+struct NonEditableTextField: NSViewRepresentable {
     @Binding var text: String
     var placeholder: String?
     var isEditable: Bool
     
     class Coordinator: NSObject, NSTextFieldDelegate {
-        var parent: NonEditableSelectableTextField
-        init(_ parent: NonEditableSelectableTextField) {
+        var parent: NonEditableTextField
+        init(_ parent: NonEditableTextField) {
             self.parent = parent
         }
         func controlTextDidChange(_ obj: Notification) {
