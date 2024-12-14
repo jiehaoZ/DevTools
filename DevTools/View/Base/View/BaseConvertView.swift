@@ -40,7 +40,7 @@ struct BaseConvertView: View {
             BaseConvertHeaderView(convertA: convertA, convertB: convertB) { state in
                 onConvertClick(state: state)
             }
-            stringContent
+            contentEditor
         }
         .padding()
         .alert(isPresented: $showAlert) {
@@ -53,7 +53,7 @@ struct BaseConvertView: View {
     }
     
     // content inputed
-    private var stringContent: some View {
+    private var contentEditor: some View {
         CodeEditor(source: $inputText, language: .json, theme: .atelierSavannaDark, fontSize: Binding.constant(16))
             .cornerRadius(5)
     }
